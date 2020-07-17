@@ -41,25 +41,60 @@ function showTime() {
 
 
 
+ hexValues = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+ bg = document.getElementById('back');
+ hexText = document.getElementById('hex');
+
  function change(){
 
-    color = ['red','blue','yellow','black','grey','gold','violet','brown','green','orange','pink']
+    // color = ['red','blue','yellow','black','grey','gold','violet','brown','green','orange','pink']
 
-    random = Math.floor(Math.random()*color.length)
+    // random = Math.floor(Math.random()*color.length)
 
-    document.getElementById('back').style.backgroundColor = color[random];
+    // document.getElementById('back').style.backgroundColor = color[random];
 
+
+    //OR
+    hexTotal ='#'
+
+    for(i=0;i<6;i++){
+        
+        randomHex = Math.floor(Math.random()*hexValues.length);
+        hexTotal = hexTotal + hexValues[randomHex]
+    }
+    bg.style.backgroundColor = hexTotal
+    
+    hexText.innerHTML = hexTotal
 }
 
+
+spanFont = document.getElementById('spanId')
 function colorChange() { 
 
-    color = ['red','blue','yellow','black','grey','gold','violet','brown','green','orange','pink']
+    // color = ['red','blue','yellow','black','grey','gold','violet','brown','green','orange','pink']
 
-    random = Math.floor(Math.random()*color.length)
+    // random = Math.floor(Math.random()*color.length)
 
-    document.getElementById('days').style.color = color[random];
+    // document.getElementById('days').style.color = color[random];
     
-    document.getElementById('datesId').style.color = color[random];
+    // document.getElementById('datesId').style.color = color[random];
+
+
+    //OR
+
+    hexFont = '#'
+    for(i=0;i<6;i++){
+       
+        fontRandom = Math.floor(Math.random()*hexValues.length)
+        hexFont =hexFont+hexValues[fontRandom]
+    }
+    document.getElementById('days').style.color = hexFont;
+
+    document.getElementById('datesId').style.color = hexFont;
+
+    spanFont.innerHTML = hexFont;
+
+    spanFont.style.color = hexFont;
 
  }
 
